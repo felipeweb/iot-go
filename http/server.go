@@ -60,9 +60,7 @@ func basicAuth() negroni.Handler {
 func makeRoutes() http.Handler {
 	r := mux.NewRouter().StrictSlash(true)
 	r.HandleFunc("/", home)
-	r.HandleFunc("/led1/ligar", ligarLed1).Methods(http.MethodPut)
-	r.HandleFunc("/led1/desligar", desligarLed1).Methods(http.MethodPut)
-	r.HandleFunc("/led2/ligar", ligarLed2).Methods(http.MethodPut)
-	r.HandleFunc("/led2/desligar", desligarLed2).Methods(http.MethodPut)
+	r.HandleFunc("/led/ligar", ligarLed).Methods(http.MethodPut)
+	r.HandleFunc("/led/desligar", desligarLed).Methods(http.MethodPut)
 	return r
 }
